@@ -1,0 +1,342 @@
+
+
+*************************************2012.02.13.17.02.1329123766***************************************************************************************************************************
+Welcome to Jex Research Lab!
+This program for Commercial data mining, development by jianxins, edit: adair, Updated on Apil 25, 2011.Mon.Feb.13.17:02:46.2012
+
+
+STEP1  Backup the whole database  runing ...Mon.Feb.13.17:39:08.2012
+step1  Finised!	Mon.Feb.13.17:39:08.2012
+
+STEP2 extract.US.custom.original.data.py  Import.transaction.data.py ...Mon.Feb.13.17:39:08.2012
+ step2   python process.new.data/program/extract.US.custom.original.data.py  2012/02/20120203.txt  runing ...	Mon.Feb.13.17:39:08.2012
+ step2   mv  2012/02/20120203.txt   2012/02/20120203.txt.did  runing ...	Mon.Feb.13.17:39:08.2012
+ step2   python  process.new.data/program/import.transaction.data.py -f  2012/02/20120203.txt.out.import  runing ...	Mon.Feb.13.19:17:37.2012
+ step2   python process.new.data/program/extract.US.custom.original.data.py  2012/02/20120201.txt  runing ...	Mon.Feb.13.19:17:37.2012
+ step2   mv  2012/02/20120201.txt   2012/02/20120201.txt.did  runing ...	Mon.Feb.13.19:17:37.2012
+ step2   python  process.new.data/program/import.transaction.data.py -f  2012/02/20120201.txt.out.import  runing ...	Mon.Feb.13.21:20:17.2012
+ step2   python process.new.data/program/extract.US.custom.original.data.py  2012/02/20120202.txt  runing ...	Mon.Feb.13.21:20:17.2012
+ step2   mv  2012/02/20120202.txt   2012/02/20120202.txt.did  runing ...	Mon.Feb.13.21:20:17.2012
+ step2   python  process.new.data/program/import.transaction.data.py -f  2012/02/20120202.txt.out.import  runing ...	Mon.Feb.13.22:31:07.2012
+step2 Finshed!	Mon.Feb.13.22:31:07.2012
+
+STEP3 SELECT * FROM  Export Map_buyer/Map_seller information Running ...Mon.Feb.13.22:31:07.2012
+ step3  temp.seller.file  select id, seller_name, seller_add from map_seller where cluster_right=1;  runing ...	Mon.Feb.13.22:32:32.2012
+ step3  temp.buller.file  select id, buyer_name, buyer_add from map_buyer where cluster_right=1;  runing ...	Mon.Feb.13.22:33:52.2012
+ step3   exportMapSellerInfo  runing ...	Mon.Feb.13.22:33:52.2012
+ step3   exportMapBuyerInfo  runing ...	Mon.Feb.13.22:33:52.2012
+step3  Finshed!	Mon.Feb.13.22:33:52.2012
+
+STEP4   Preprocess the data for buyer seller  ...Mon.Feb.13.22:33:52.2012
+ step4  python PreprocessSellerInfo.py  -i temp.seller.file -o temp.seller.file.preprocessed  runing ...	Mon.Feb.13.22:33:56.2012
+ step4 python preprocess.buyer.info.py -alpha us.alpha.conf.txt   -beta us.beta.conf.txt   -gamma us.gamma.conf.txt   -i  temp.buyer.file -o temp.buyer.file.preprocessed runing ...	Mon.Feb.13.22:47:49.2012
+step4  Finshed!	Mon.Feb.13.22:47:49.2012
+
+STEP5 Clustering seller's informations ...Mon.Feb.13.22:47:49.2012
+ step5 python process.new.data/program/seller/seller.clustering.py  -s 0.7 0.7 -f process.new.data/program/seller/temp.seller.file.preprocessed -o process.new.data/program/seller/seller.clustering.result runing ...	Mon.Feb.13.23:22:35.2012
+step5  Finshed!	Mon.Feb.13.23:22:35.2012
+
+STEP6  Clustering buyer's information ...Mon.Feb.13.23:22:35.2012
+step6  Finshed!	Tue.Feb.14.00:52:57.2012
+
+STEP7   extract information from buyer's clustering results  ...Tue.Feb.14.00:52:57.2012
+ step7 python extract.information.from.clustering.py runing ...	Tue.Feb.14.00:52:57.2012
+step7  Finshed!	Tue.Feb.14.03:33:08.2012
+
+STEP8  extract information from Seller's clustering results ...Tue.Feb.14.03:33:08.2012
+ step8 python import.seller.clustering.data.py -f  seller.clustering.result  runing ...	Tue.Feb.14.03:33:08.2012
+step8  Finshed!	Tue.Feb.14.04:26:47.2012
+
+STEP9  Extract keywords from description ...Tue.Feb.14.04:26:47.2012
+ step9 python process.new.data/program/extract.keywords.from.description.py runing ...	Tue.Feb.14.04:26:47.2012
+step9  Finshed!	Tue.Feb.14.04:26:47.2012
+
+STEP10   Run procedure step10.call4  ...Tue.Feb.14.04:26:47.2012
+ step10 CALL test runing ...	Tue.Feb.14.04:28:32.2012
+step10  Finshed!	Tue.Feb.14.11:26:15.2012
+
+STEP11   Compute the country information for each seller in Map_seller tab
+
+*************************************2012.02.13.17.02.1329123766***************************************************************************************************************************
+Welcome to Jex Research Lab!
+This program for Commercial data mining, development by jianxins, edit: adair, Updated on Apil 25, 2011.Mon.Feb.13.17:02:46.2012
+
+
+STEP1  Backup the whole database  runing ...Mon.Feb.13.17:39:08.2012
+step1  Finised!	Mon.Feb.13.17:39:08.2012
+
+STEP2 extract.US.custom.original.data.py  Import.transaction.data.py ...Mon.Feb.13.17:39:08.2012
+ step2   python process.new.data/program/extract.US.custom.original.data.py  2012/02/20120203.txt  runing ...	Mon.Feb.13.17:39:08.2012
+ step2   mv  2012/02/20120203.txt   2012/02/20120203.txt.did  runing ...	Mon.Feb.13.17:39:08.2012
+ step2   python  process.new.data/program/import.transaction.data.py -f  2012/02/20120203.txt.out.import  runing ...	Mon.Feb.13.19:17:37.2012
+ step2   python process.new.data/program/extract.US.custom.original.data.py  2012/02/20120201.txt  runing ...	Mon.Feb.13.19:17:37.2012
+ step2   mv  2012/02/20120201.txt   2012/02/20120201.txt.did  runing ...	Mon.Feb.13.19:17:37.2012
+ step2   python  process.new.data/program/import.transaction.data.py -f  2012/02/20120201.txt.out.import  runing ...	Mon.Feb.13.21:20:17.2012
+ step2   python process.new.data/program/extract.US.custom.original.data.py  2012/02/20120202.txt  runing ...	Mon.Feb.13.21:20:17.2012
+ step2   mv  2012/02/20120202.txt   2012/02/20120202.txt.did  runing ...	Mon.Feb.13.21:20:17.2012
+ step2   python  process.new.data/program/import.transaction.data.py -f  2012/02/20120202.txt.out.import  runing ...	Mon.Feb.13.22:31:07.2012
+step2 Finshed!	Mon.Feb.13.22:31:07.2012
+
+STEP3 SELECT * FROM  Export Map_buyer/Map_seller information Running ...Mon.Feb.13.22:31:07.2012
+ step3  temp.seller.file  select id, seller_name, seller_add from map_seller where cluster_right=1;  runing ...	Mon.Feb.13.22:32:32.2012
+ step3  temp.buller.file  select id, buyer_name, buyer_add from map_buyer where cluster_right=1;  runing ...	Mon.Feb.13.22:33:52.2012
+ step3   exportMapSellerInfo  runing ...	Mon.Feb.13.22:33:52.2012
+ step3   exportMapBuyerInfo  runing ...	Mon.Feb.13.22:33:52.2012
+step3  Finshed!	Mon.Feb.13.22:33:52.2012
+
+STEP4   Preprocess the data for buyer seller  ...Mon.Feb.13.22:33:52.2012
+ step4  python PreprocessSellerInfo.py  -i temp.seller.file -o temp.seller.file.preprocessed  runing ...	Mon.Feb.13.22:33:56.2012
+ step4 python preprocess.buyer.info.py -alpha us.alpha.conf.txt   -beta us.beta.conf.txt   -gamma us.gamma.conf.txt   -i  temp.buyer.file -o temp.buyer.file.preprocessed runing ...	Mon.Feb.13.22:47:49.2012
+step4  Finshed!	Mon.Feb.13.22:47:49.2012
+
+STEP5 Clustering seller's informations ...Mon.Feb.13.22:47:49.2012
+ step5 python process.new.data/program/seller/seller.clustering.py  -s 0.7 0.7 -f process.new.data/program/seller/temp.seller.file.preprocessed -o process.new.data/program/seller/seller.clustering.result runing ...	Mon.Feb.13.23:22:35.2012
+step5  Finshed!	Mon.Feb.13.23:22:35.2012
+
+STEP6  Clustering buyer's information ...Mon.Feb.13.23:22:35.2012
+step6  Finshed!	Tue.Feb.14.00:52:19.2012
+
+STEP7   extract information from buyer's clustering results  ...Tue.Feb.14.00:52:19.2012
+ step7 python extract.information.from.clustering.py runing ...	Tue.Feb.14.00:52:19.2012
+step7  Finshed!	Tue.Feb.14.03:32:42.2012
+
+STEP8  extract information from Seller's clustering results ...Tue.Feb.14.03:32:42.2012
+ step8 python import.seller.clustering.data.py -f  seller.clustering.result  runing ...	Tue.Feb.14.03:32:42.2012
+step8  Finshed!	Tue.Feb.14.04:26:47.2012
+
+STEP9  Extract keywords from description ...Tue.Feb.14.04:26:47.2012
+ step9 python process.new.data/program/extract.keywords.from.description.py runing ...	Tue.Feb.14.04:26:47.2012
+step9  Finshed!	Tue.Feb.14.04:26:47.2012
+
+STEP10   Run procedure step10.call4  ...Tue.Feb.14.04:26:47.2012
+ step10 CALL test runing ...	Tue.Feb.14.04:28:32.2012
+step10  Finshed!	Tue.Feb.14.15:57:43.2012
+
+STEP11   Compute the country information for each seller in Map_seller table ...Tue.Feb.14.15:57:43.2012
+ step10 python DecideSellerCountryInformation.py  runing ...	Tue.Feb.14.23:38:04.2012
+step11  Finshed!	Tue.Feb.14.23:38:04.2012
+
+STEP12 Extract seller's information automatically  ...Tue.Feb.14.23:38:04.2012
+ step12 python  Process.Seller.Information.py -c 115 > log.country.115 runing ...	Tue.Feb.14.23:41:37.2012
+ step12 python  Process.Seller.Information.py -c 41 > log.country.41 runing ...	Tue.Feb.14.23:42:22.2012
+ step12 python  Process.Seller.Information.py -c 83 > log.country.83 runing ...	Tue.Feb.14.23:42:42.2012
+ step12 python  Process.Seller.Information.py -c 193 > log.country.193 runing ...	Tue.Feb.14.23:43:02.2012
+ step12 python  Process.Seller.Information.py -c 13 > log.country.13 runing ...	Tue.Feb.14.23:43:21.2012
+ step12 python  Process.Seller.Information.py -c 64 > log.country.64 runing ...	Tue.Feb.14.23:43:41.2012
+ step12 python  Process.Seller.Information.py -c 70 > log.country.70 runing ...	Tue.Feb.14.23:44:01.2012
+ step12 python  Process.Seller.Information.py -c 86 > log.country.86 runing ...	Tue.Feb.14.23:44:22.2012
+ step12 python  Process.Seller.Information.py -c 92 > log.country.92 runing ...	Tue.Feb.14.23:44:51.2012
+ step12 python  Process.Seller.Information.py -c 94 > log.country.94 runing ...	Tue.Feb.14.23:45:11.2012
+ step12 python  Process.Seller.Information.py -c 180 > log.country.180 runing ...	Tue.Feb.14.23:45:31.2012
+ step12 python  Process.Seller.Information.py -c 36 > log.country.36 runing ...	Tue.Feb.14.23:45:54.2012
+step12  Finshed!	Tue.Feb.14.23:45:54.2012
+
+STEP13 Extract seller's information automatically  ...Tue.Feb.14.23:45:54.2012
+ step13 python  DecideBuyerCountryInformation.py runing ...	Tue.Feb.14.23:58:15.2012
+
+
+  We finished all steps. Thanks for using the program.	Tue.Feb.14.23:58:15.2012
+
+
+****************************************************************************************************************************************************************
+le ...Tue.Feb.14.11:26:15.2012
+ step10 python DecideSellerCountryInformation.py  runing ...	Tue.Feb.14.23:38:22.2012
+step11  Finshed!	Tue.Feb.14.23:38:22.2012
+
+STEP12 Extract seller's information automatically  ...Tue.Feb.14.23:38:22.2012
+ step12 python  Process.Seller.Information.py -c 115 > log.country.115 runing ...	Tue.Feb.14.23:41:37.2012
+ step12 python  Process.Seller.Information.py -c 41 > log.country.41 runing ...	Tue.Feb.14.23:42:22.2012
+ step12 python  Process.Seller.Information.py -c 83 > log.country.83 runing ...	Tue.Feb.14.23:42:42.2012
+ step12 python  Process.Seller.Information.py -c 193 > log.country.193 runing ...	Tue.Feb.14.23:43:02.2012
+ step12 python  Process.Seller.Information.py -c 13 > log.country.13 runing ...	Tue.Feb.14.23:43:21.2012
+ step12 python  Process.Seller.Information.py -c 64 > log.country.64 runing ...	Tue.Feb.14.23:43:42.2012
+ step12 python  Process.Seller.Information.py -c 70 > log.country.70 runing ...	Tue.Feb.14.23:44:01.2012
+ step12 python  Process.Seller.Information.py -c 86 > log.country.86 runing ...	Tue.Feb.14.23:44:22.2012
+ step12 python  Process.Seller.Information.py -c 92 > log.country.92 runing ...	Tue.Feb.14.23:44:51.2012
+ step12 python  Process.Seller.Information.py -c 94 > log.country.94 runing ...	Tue.Feb.14.23:45:11.2012
+ step12 python  Process.Seller.Information.py -c 180 > log.country.180 runing ...	Tue.Feb.14.23:45:31.2012
+ step12 python  Process.Seller.Information.py -c 36 > log.country.36 runing ...	Tue.Feb.14.23:45:55.2012
+step12  Finshed!	Tue.Feb.14.23:45:55.2012
+
+STEP13 Extract seller's information automatically  ...Tue.Feb.14.23:45:55.2012
+ step13 python  DecideBuyerCountryInformation.py runing ...	Tue.Feb.14.23:58:15.2012
+
+
+  We finished all steps. Thanks for using the program.	Tue.Feb.14.23:58:15.2012
+
+
+****************************************************************************************************************************************************************
+
+
+*************************************2012.02.17.16.02.1329468605***************************************************************************************************************************
+Welcome to Jex Research Lab!
+This program for Commercial data mining, development by jianxins, edit: adair, Updated on Apil 25, 2011.Fri.Feb.17.16:50:05.2012
+
+
+STEP1  Backup the whole database  runing ...Fri.Feb.17.17:21:43.2012
+step1  Finised!	Fri.Feb.17.17:21:43.2012
+
+STEP2 extract.US.custom.original.data.py  Import.transaction.data.py ...Fri.Feb.17.17:21:43.2012
+ step2   python process.new.data/program/extract.US.custom.original.data.py  2012/02/20120206.txt  runing ...	Fri.Feb.17.17:21:44.2012
+ step2   mv  2012/02/20120206.txt   2012/02/20120206.txt.did  runing ...	Fri.Feb.17.17:21:44.2012
+ step2   python  process.new.data/program/import.transaction.data.py -f  2012/02/20120206.txt.out.import  runing ...	Fri.Feb.17.18:18:18.2012
+ step2   python process.new.data/program/extract.US.custom.original.data.py  2012/02/20120204.txt  runing ...	Fri.Feb.17.18:18:18.2012
+ step2   mv  2012/02/20120204.txt   2012/02/20120204.txt.did  runing ...	Fri.Feb.17.18:18:18.2012
+ step2   python  process.new.data/program/import.transaction.data.py -f  2012/02/20120204.txt.out.import  runing ...	Fri.Feb.17.19:43:46.2012
+ step2   python process.new.data/program/extract.US.custom.original.data.py  2012/02/20120207.txt  runing ...	Fri.Feb.17.19:43:46.2012
+ step2   mv  2012/02/20120207.txt   2012/02/20120207.txt.did  runing ...	Fri.Feb.17.19:43:46.2012
+ step2   python  process.new.data/program/import.transaction.data.py -f  2012/02/20120207.txt.out.import  runing ...	Fri.Feb.17.20:00:36.2012
+ step2   python process.new.data/program/extract.US.custom.original.data.py  2012/02/20120205.txt  runing ...	Fri.Feb.17.20:00:36.2012
+ step2   mv  2012/02/20120205.txt   2012/02/20120205.txt.did  runing ...	Fri.Feb.17.20:00:36.2012
+ step2   python  process.new.data/program/import.transaction.data.py -f  2012/02/20120205.txt.out.import  runing ...	Fri.Feb.17.20:23:50.2012
+step2 Finshed!	Fri.Feb.17.20:23:50.2012
+
+STEP3 SELECT * FROM  Export Map_buyer/Map_seller information Running ...Fri.Feb.17.20:23:50.2012
+ step3  temp.seller.file  select id, seller_name, seller_add from map_seller where cluster_right=1;  runing ...	Fri.Feb.17.20:25:34.2012
+ step3  temp.buller.file  select id, buyer_name, buyer_add from map_buyer where cluster_right=1;  runing ...	Fri.Feb.17.20:28:06.2012
+ step3   exportMapSellerInfo  runing ...	Fri.Feb.17.20:28:06.2012
+ step3   exportMapBuyerInfo  runing ...	Fri.Feb.17.20:28:06.2012
+step3  Finshed!	Fri.Feb.17.20:28:06.2012
+
+STEP4   Preprocess the data for buyer seller  ...Fri.Feb.17.20:28:06.2012
+ step4  python PreprocessSellerInfo.py  -i temp.seller.file -o temp.seller.file.preprocessed  runing ...	Fri.Feb.17.20:28:12.2012
+ step4 python preprocess.buyer.info.py -alpha us.alpha.conf.txt   -beta us.beta.conf.txt   -gamma us.gamma.conf.txt   -i  temp.buyer.file -o temp.buyer.file.preprocessed runing ...	Fri.Feb.17.20:41:11.2012
+step4  Finshed!	Fri.Feb.17.20:41:11.2012
+
+STEP5 Clustering seller's informations ...Fri.Feb.17.20:41:11.2012
+ step5 python process.new.data/program/seller/seller.clustering.py  -s 0.7 0.7 -f process.new.data/program/seller/temp.seller.file.preprocessed -o process.new.data/program/seller/seller.clustering.result runing ...	Fri.Feb.17.21:16:42.2012
+step5  Finshed!	Fri.Feb.17.21:16:42.2012
+
+STEP6  Clustering buyer's information ...Fri.Feb.17.21:16:42.2012
+step6  Finshed!	Fri.Feb.17.22:48:55.2012
+
+STEP7   extract information from buyer's clustering results  ...Fri.Feb.17.22:48:55.2012
+ step7 python extract.information.from.clustering.py runing ...	Fri.Feb.17.22:48:55.2012
+step7  Finshed!	Sat.Feb.18.15:49:35.2012
+
+STEP8  extract information from Seller's clustering results ...Sat.Feb.18.15:49:35.2012
+ step8 python import.seller.clustering.data.py -f  seller.clustering.result  runing ...	Sat.Feb.18.15:49:35.2012
+step8  Finshed!	Sat.Feb.18.16:27:42.2012
+
+STEP9  Extract keywords from description ...Sat.Feb.18.16:27:42.2012
+ step9 python p
+
+*************************************2012.02.17.16.02.1329468605***************************************************************************************************************************
+Welcome to Jex Research Lab!
+This program for Commercial data mining, development by jianxins, edit: adair, Updated on Apil 25, 2011.Fri.Feb.17.16:50:05.2012
+
+
+STEP1  Backup the whole database  runing ...Fri.Feb.17.17:21:43.2012
+step1  Finised!	Fri.Feb.17.17:21:43.2012
+
+STEP2 extract.US.custom.original.data.py  Import.transaction.data.py ...Fri.Feb.17.17:21:43.2012
+ step2   python process.new.data/program/extract.US.custom.original.data.py  2012/02/20120206.txt  runing ...	Fri.Feb.17.17:21:44.2012
+ step2   mv  2012/02/20120206.txt   2012/02/20120206.txt.did  runing ...	Fri.Feb.17.17:21:44.2012
+ step2   python  process.new.data/program/import.transaction.data.py -f  2012/02/20120206.txt.out.import  runing ...	Fri.Feb.17.18:18:18.2012
+ step2   python process.new.data/program/extract.US.custom.original.data.py  2012/02/20120204.txt  runing ...	Fri.Feb.17.18:18:18.2012
+ step2   mv  2012/02/20120204.txt   2012/02/20120204.txt.did  runing ...	Fri.Feb.17.18:18:18.2012
+ step2   python  process.new.data/program/import.transaction.data.py -f  2012/02/20120204.txt.out.import  runing ...	Fri.Feb.17.19:43:46.2012
+ step2   python process.new.data/program/extract.US.custom.original.data.py  2012/02/20120207.txt  runing ...	Fri.Feb.17.19:43:46.2012
+ step2   mv  2012/02/20120207.txt   2012/02/20120207.txt.did  runing ...	Fri.Feb.17.19:43:46.2012
+ step2   python  process.new.data/program/import.transaction.data.py -f  2012/02/20120207.txt.out.import  runing ...	Fri.Feb.17.20:00:36.2012
+ step2   python process.new.data/program/extract.US.custom.original.data.py  2012/02/20120205.txt  runing ...	Fri.Feb.17.20:00:36.2012
+ step2   mv  2012/02/20120205.txt   2012/02/20120205.txt.did  runing ...	Fri.Feb.17.20:00:36.2012
+ step2   python  process.new.data/program/import.transaction.data.py -f  2012/02/20120205.txt.out.import  runing ...	Fri.Feb.17.20:23:50.2012
+step2 Finshed!	Fri.Feb.17.20:23:50.2012
+
+STEP3 SELECT * FROM  Export Map_buyer/Map_seller information Running ...Fri.Feb.17.20:23:50.2012
+ step3  temp.seller.file  select id, seller_name, seller_add from map_seller where cluster_right=1;  runing ...	Fri.Feb.17.20:25:34.2012
+ step3  temp.buller.file  select id, buyer_name, buyer_add from map_buyer where cluster_right=1;  runing ...	Fri.Feb.17.20:28:06.2012
+ step3   exportMapSellerInfo  runing ...	Fri.Feb.17.20:28:06.2012
+ step3   exportMapBuyerInfo  runing ...	Fri.Feb.17.20:28:06.2012
+step3  Finshed!	Fri.Feb.17.20:28:06.2012
+
+STEP4   Preprocess the data for buyer seller  ...Fri.Feb.17.20:28:06.2012
+ step4  python PreprocessSellerInfo.py  -i temp.seller.file -o temp.seller.file.preprocessed  runing ...	Fri.Feb.17.20:28:12.2012
+ step4 python preprocess.buyer.info.py -alpha us.alpha.conf.txt   -beta us.beta.conf.txt   -gamma us.gamma.conf.txt   -i  temp.buyer.file -o temp.buyer.file.preprocessed runing ...	Fri.Feb.17.20:41:11.2012
+step4  Finshed!	Fri.Feb.17.20:41:11.2012
+
+STEP5 Clustering seller's informations ...Fri.Feb.17.20:41:11.2012
+ step5 python process.new.data/program/seller/seller.clustering.py  -s 0.7 0.7 -f process.new.data/program/seller/temp.seller.file.preprocessed -o process.new.data/program/seller/seller.clustering.result runing ...	Fri.Feb.17.21:16:42.2012
+step5  Finshed!	Fri.Feb.17.21:16:42.2012
+
+STEP6  Clustering buyer's information ...Fri.Feb.17.21:16:42.2012
+step6  Finshed!	Fri.Feb.17.22:49:46.2012
+
+STEP7   extract information from buyer's clustering results  ...Fri.Feb.17.22:49:46.2012
+ step7 python extract.information.from.clustering.py runing ...	Fri.Feb.17.22:49:46.2012
+step7  Finshed!	Sat.Feb.18.14:47:14.2012
+
+STEP8  extract information from Seller's clustering results ...Sat.Feb.18.14:47:14.2012
+ step8 python import.seller.clustering.data.py -f  seller.clustering.result  runing ...	Sat.Feb.18.14:47:14.2012
+step8  Finshed!	Sat.Feb.18.16:27:42.2012
+
+STEP9  Extract keywords from description ...Sat.Feb.18.16:27:42.2012
+ step9 python process.new.data/program/extract.keywords.from.description.py runing ...	Sat.Feb.18.16:27:42.2012
+step9  Finshed!	Sat.Feb.18.16:27:43.2012
+
+STEP10   Run procedure step10.call4  ...Sat.Feb.18.16:27:43.2012
+ step10 CALL test runing ...	Sat.Feb.18.16:31:55.2012
+step10  Finshed!	Sat.Feb.18.20:44:11.2012
+
+STEP11   Compute the country information for each seller in Map_seller table ...Sat.Feb.18.20:44:11.2012
+ step10 python DecideSellerCountryInformation.py  runing ...	Sun.Feb.19.07:18:00.2012
+step11  Finshed!	Sun.Feb.19.07:18:00.2012
+
+STEP12 Extract seller's information automatically  ...Sun.Feb.19.07:18:00.2012
+ step12 python  Process.Seller.Information.py -c 115 > log.country.115 runing ...	Sun.Feb.19.07:21:06.2012
+ step12 python  Process.Seller.Information.py -c 41 > log.country.41 runing ...	Sun.Feb.19.07:22:37.2012
+ step12 python  Process.Seller.Information.py -c 83 > log.country.83 runing ...	Sun.Feb.19.07:22:54.2012
+ step12 python  Process.Seller.Information.py -c 193 > log.country.193 runing ...	Sun.Feb.19.07:23:07.2012
+ step12 python  Process.Seller.Information.py -c 13 > log.country.13 runing ...	Sun.Feb.19.07:23:20.2012
+ step12 python  Process.Seller.Information.py -c 64 > log.country.64 runing ...	Sun.Feb.19.07:23:37.2012
+ step12 python  Process.Seller.Information.py -c 70 > log.country.70 runing ...	Sun.Feb.19.07:23:51.2012
+ step12 python  Process.Seller.Information.py -c 86 > log.country.86 runing ...	Sun.Feb.19.07:24:06.2012
+ step12 python  Process.Seller.Information.py -c 92 > log.country.92 runing ...	Sun.Feb.19.07:24:39.2012
+ step12 python  Process.Seller.Information.py -c 94 > log.country.94 runing ...	Sun.Feb.19.07:24:55.2012
+ step12 python  Process.Seller.Information.py -c 180 > log.country.180 runing ...	Sun.Feb.19.07:25:10.2012
+ step12 python  Process.Seller.Information.py -c 36 > log.country.36 runing ...	Sun.Feb.19.07:25:30.2012
+step12  Finshed!	Sun.Feb.19.07:25:30.2012
+
+STEP13 Extract seller's information automatically  ...Sun.Feb.19.07:25:30.2012
+ step13 python  DecideBuyerCountryInformation.py runing ...	Sun.Feb.19.07:50:43.2012
+
+
+  We finished all steps. Thanks for using the program.	Sun.Feb.19.07:50:44.2012
+
+
+****************************************************************************************************************************************************************
+rocess.new.data/program/extract.keywords.from.description.py runing ...	Sat.Feb.18.16:27:42.2012
+step9  Finshed!	Sat.Feb.18.16:27:43.2012
+
+STEP10   Run procedure step10.call4  ...Sat.Feb.18.16:27:43.2012
+ step10 CALL test runing ...	Sat.Feb.18.16:31:55.2012
+step10  Finshed!	Sun.Feb.19.00:32:54.2012
+
+STEP11   Compute the country information for each seller in Map_seller table ...Sun.Feb.19.00:32:54.2012
+ step10 python DecideSellerCountryInformation.py  runing ...	Sun.Feb.19.07:55:12.2012
+step11  Finshed!	Sun.Feb.19.07:55:13.2012
+
+STEP12 Extract seller's information automatically  ...Sun.Feb.19.07:55:13.2012
+ step12 python  Process.Seller.Information.py -c 115 > log.country.115 runing ...	Sun.Feb.19.07:55:56.2012
+ step12 python  Process.Seller.Information.py -c 41 > log.country.41 runing ...	Sun.Feb.19.07:56:35.2012
+ step12 python  Process.Seller.Information.py -c 83 > log.country.83 runing ...	Sun.Feb.19.07:56:49.2012
+ step12 python  Process.Seller.Information.py -c 193 > log.country.193 runing ...	Sun.Feb.19.07:57:02.2012
+ step12 python  Process.Seller.Information.py -c 13 > log.country.13 runing ...	Sun.Feb.19.07:57:17.2012
+ step12 python  Process.Seller.Information.py -c 64 > log.country.64 runing ...	Sun.Feb.19.07:57:32.2012
+ step12 python  Process.Seller.Information.py -c 70 > log.country.70 runing ...	Sun.Feb.19.07:57:45.2012
+ step12 python  Process.Seller.Information.py -c 86 > log.country.86 runing ...	Sun.Feb.19.07:57:59.2012
+ step12 python  Process.Seller.Information.py -c 92 > log.country.92 runing ...	Sun.Feb.19.07:58:21.2012
+ step12 python  Process.Seller.Information.py -c 94 > log.country.94 runing ...	Sun.Feb.19.07:58:35.2012
+ step12 python  Process.Seller.Information.py -c 180 > log.country.180 runing ...	Sun.Feb.19.07:58:49.2012
+ step12 python  Process.Seller.Information.py -c 36 > log.country.36 runing ...	Sun.Feb.19.07:59:07.2012
+step12  Finshed!	Sun.Feb.19.07:59:07.2012
+
+STEP13 Extract seller's information automatically  ...Sun.Feb.19.07:59:07.2012
+ step13 python  DecideBuyerCountryInformation.py runing ...	Sun.Feb.19.08:01:37.2012
+
+
+  We finished all steps. Thanks for using the program.	Sun.Feb.19.08:01:37.2012
+
+
+****************************************************************************************************************************************************************
