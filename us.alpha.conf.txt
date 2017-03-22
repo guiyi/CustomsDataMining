@@ -1,0 +1,38 @@
+ @,
+: @:
+ @*
+ AND @&
+ LTD. @LTD.
+ INC. @INC.
+ CO. @ CO.
+ LLC. @LLC.
+ LLC. @LLC
+ AVE. @AVE.
+ ST. @ ST.
+ BLVD. @BLVD.
+ DR. @DR.
+ RD. @RD.
+ Usa @ Usa 
+USA @U.S.A.
+USA @U.S.A
+FAX @FAX;
+ TELEPHONE @ P:
+ TELEPHONE @ T;
+ TELEPHONE @ TEL.
+ TELEPHONE @ T EL.
+ TELEPHONE @ T EL:
+ TELEPHONE @ T EL;
+ telephone 9@ tel9
+ telephone 8@ tel8
+ telephone 7@ tel7
+ telephone 6@ tel6
+ telephone 5@ tel5
+ telephone 4@ tel4
+ telephone 3@ tel3
+ telephone 2@ tel2
+ telephone 1@ tel1
+ E. @ E.
+ S. @ S.
+ N. @ N.
+ W. @ W.
+ @ .
