@@ -1,0 +1,103 @@
+Usa@United States Of America
+NH@NEW HAMPSHIRE
+Distribution@Distrib ution
+Avenue@Avenu e
+Drive@Driv e
+Division@Divis ion
+Association@Assoc iation
+SC@SOUTH CAROLINA
+SD@SOUTH DAKOTA
+WV@WEST VIRGINIA
+ND@NORTH DAKOTA
+CONTACT: @CONTACT PERSON:
+CONTACT: @CTC PERSON:
+NJ@NEW JERESY
+NJ@NEW JERsey
+NY@NEW YORK
+Industrial@Indus trial
+OH@o hin
+Contact@Att n
+Contact@Contac t
+Canada@Cana da
+p.o. Box@p. o no.
+P.O. BOX@P. OBOX
+P.O. BOX@P.O. #
+Telephone@Phon e
+Place@Pla ce
+Ltd.@Limit d
+Technology@Tech nology
+TELEPHONE @TELEPHONE NOS. 
+TELEPHONE @TELEPHONE NO.
+TELEPHONE @TELEPHONE NO. :
+TELEPHONE @TELEPHONE NO:
+TELEPHONE @Tel No:
+TELEPHONE @T EL:
+Telephone@Tel ephone
+Avenue@Aven ue
+Avenue@Ave nue
+Drive@Dr ive
+Int'l@Int. l
+Int'l@Int l
+Technology@tec hnology
+Industrial@Ind ustrial
+Co.@Co mpany
+Address@Add ress
+Co.@Co rporation
+Co.@Corp oration
+Co.@Corpora tion
+Co.@Corporat ion
+Co.@Corporati on
+Division@Div ision
+Distribution@Dist ribution
+distribution@Distr ibution
+Union@Uni on
+Union@Un ion
+Ltd.@Lt d.
+Ltd.@Lt d
+UK @UNITED KINGDOM
+USA@UNITED STATEs OF AMERICA
+USA@UNITED STATE OF AMERICA
+USA@UNITED STATES OF AME
+USA@UNITED STATES
+USA@u. s.a.
+USA@U. SA
+USA@U SA
+USA@U.S. A
+USA@US A
+USA@U S A
+DC@DISTRICT OF COLUMBIA
+FAX@f ax  #
+Economic@Econo mic
+Circle@Cir cle
+system@Sys tem
+nj@n. j
+NJ@new j ersey
+NJ@new je rsey
+NJ@new jersy
+NJ@n ew jersey
+NJ@new jers ey
+NJ@n ew jerse
+NJ@new jbrsey
+nj@new je
+nj@new j
+NM@NEW MEXICO
+Line@Lin e
+NO.@NO.()
+oh@o hio
+USA@UNITED STATES 
+USA@UNITED STATE
+USA@u nited states
+USA@un ited states
+USA@UNITE STATE
+RI@RHODE ISLAND
+FAX @FAX NO:
+CANADA@can ada
+TELEPHONE @ p h 
+Department@Dep artment
+ FAX @ F AX:
+NS@Nova Scotia
+PE@Prince Edward Island
+NB@New Brunswick
+BC@British Columbia
+NT@Northwest Territories
+YT@Yukon Territory
